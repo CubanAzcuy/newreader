@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F5EDA3B1C40469B00603452 /* CollectionViewArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */; };
 		8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */; };
+		8F5EDA401C406A8E00603452 /* NewsArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3E1C406A8E00603452 /* NewsArticleViewController.m */; };
+		8F5EDA411C406A8E00603452 /* NewsArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3F1C406A8E00603452 /* NewsArticleViewController.xib */; };
 		8FE12E231C3F63620003942F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E221C3F63620003942F /* main.m */; };
 		8FE12E261C3F63620003942F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E251C3F63620003942F /* AppDelegate.m */; };
 		8FE12E2C1C3F63620003942F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE12E2A1C3F63620003942F /* Main.storyboard */; };
@@ -43,6 +45,9 @@
 		8F5EDA381C40469B00603452 /* CollectionViewArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewArticleCell.h; sourceTree = "<group>"; };
 		8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewArticleCell.m; sourceTree = "<group>"; };
 		8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewArticleCell.xib; sourceTree = "<group>"; };
+		8F5EDA3D1C406A8E00603452 /* NewsArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsArticleViewController.h; sourceTree = "<group>"; };
+		8F5EDA3E1C406A8E00603452 /* NewsArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsArticleViewController.m; sourceTree = "<group>"; };
+		8F5EDA3F1C406A8E00603452 /* NewsArticleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsArticleViewController.xib; sourceTree = "<group>"; };
 		8FE12E1E1C3F63610003942F /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE12E221C3F63620003942F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FE12E241C3F63620003942F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +131,9 @@
 				8F5EDA381C40469B00603452 /* CollectionViewArticleCell.h */,
 				8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */,
 				8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */,
+				8F5EDA3D1C406A8E00603452 /* NewsArticleViewController.h */,
+				8F5EDA3E1C406A8E00603452 /* NewsArticleViewController.m */,
+				8F5EDA3F1C406A8E00603452 /* NewsArticleViewController.xib */,
 				8FE12E301C3F63620003942F /* Assets.xcassets */,
 				8FE12E321C3F63620003942F /* LaunchScreen.storyboard */,
 				8FE12E351C3F63620003942F /* Info.plist */,
@@ -266,6 +274,7 @@
 			files = (
 				8FE12E341C3F63620003942F /* LaunchScreen.storyboard in Resources */,
 				8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */,
+				8F5EDA411C406A8E00603452 /* NewsArticleViewController.xib in Resources */,
 				8FE12E311C3F63620003942F /* Assets.xcassets in Resources */,
 				8FE12E2C1C3F63620003942F /* Main.storyboard in Resources */,
 			);
@@ -298,6 +307,7 @@
 				8FE12E261C3F63620003942F /* AppDelegate.m in Sources */,
 				8FE12E231C3F63620003942F /* main.m in Sources */,
 				8FE12E5A1C3F67530003942F /* ArticleScrollerCollectionView.m in Sources */,
+				8F5EDA401C406A8E00603452 /* NewsArticleViewController.m in Sources */,
 				8FE12E2F1C3F63620003942F /* NewsReader.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

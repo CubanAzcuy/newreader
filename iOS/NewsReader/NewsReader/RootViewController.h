@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "NewsCategoryPageContentViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface RootViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UIPageViewController *PageViewController;
 @property (nonatomic,strong) NSArray *newsCategoryTitles;
-@property (nonatomic,strong) NSArray *arrPageImages;
+@property (nonatomic,strong) NSArray *newsCategoryImages;
+@property (nonatomic,strong) NSArray *articleTitles;
 
 - (NewsCategoryPageContentViewController *)viewControllerAtIndex:(NSUInteger)index;
 

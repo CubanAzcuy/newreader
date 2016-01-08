@@ -47,6 +47,10 @@
                 <constraint firstItem="Xw3-dd-15X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="yqH-dy-aeC"/>
             </constraints>
             <size key="customSize" width="238" height="257"/>
+            <connections>
+                <outlet property="articleImage" destination="Xw3-dd-15X" id="Euf-2F-W75"/>
+                <outlet property="articleTitle" destination="RUw-ag-wHY" id="4E7-Ug-ZrM"/>
+            </connections>
             <point key="canvasLocation" x="374" y="358.5"/>
         </collectionViewCell>
     </objects>

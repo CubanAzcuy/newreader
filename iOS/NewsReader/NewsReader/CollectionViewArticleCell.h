@@ -10,4 +10,7 @@
 
 @interface CollectionViewArticleCell : UICollectionViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *articleImage;
+@property (strong, nonatomic) IBOutlet UILabel *articleTitle;
+
 @end

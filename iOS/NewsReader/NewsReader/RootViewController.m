@@ -12,12 +12,14 @@
 @interface RootViewController ()
 
 @property (strong, nonatomic) IBOutlet ArticleScrollerCollectionView *collectionView;
+@property (nonatomic,assign) NSUInteger topicInteger;
+@property (nonatomic,assign) NSUInteger previousTopicInteger;
 
 @end
 
 @implementation RootViewController
 
-@synthesize PageViewController,newsCategoryTitles,arrPageImages;
+@synthesize PageViewController,newsCategoryTitles,newsCategoryImages, articleTitles;
 
 - (void)viewDidLoad
 {
@@ -31,10 +33,12 @@
     self.navigationItem.leftBarButtonItem = menuButton;
     
     newsCategoryTitles = @[@"Sports",@"Crime",@"Technology", @"Politics"];
-    arrPageImages =@[@"1.png",@"2.png",@"3.png", @"4.png"];
+    newsCategoryImages =@[@"1.png",@"2.png",@"3.png", @"4.png"];
+    articleTitles = @[@"Steph Curry scores 200 points in one game!", @"Midtown crime at an all-time high!", @"Apple releases the iPhone8c, now with real gold!", @"Trump has change of heart about Muslims after eating falafel!"];
     
     self.PageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.PageViewController.dataSource = self;
+    self.PageViewController.delegate = self;
     
     NewsCategoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
     NSArray *viewControllers = @[startingViewController];
@@ -68,6 +72,7 @@
     }
     
     index--;
+    self.topicInteger = index;
     return [self viewControllerAtIndex:index];
 }
 
@@ -85,8 +90,19 @@
     {
         return nil;
     }
+    
+    self.topicInteger = index;
+    NSLog(@"%d", self.topicInteger);
     return [self viewControllerAtIndex:index];
 }
+
+- (void)pageViewController:(UIPageViewController *)pageViewController
+willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers{
+    //article collection view refresh logic here
+    [self.collectionView setContentOffset:CGPointZero animated:YES];
+    [self.collectionView reloadData];
+    
+    }
 
 #pragma mark - Other Methods
 - (NewsCategoryPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -95,15 +111,19 @@
         return nil;
     }
     
-    NSLog(@"%d", index);
-    
     NewsCategoryPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsCategoryPageContentViewController"];
     pageContentViewController.txtTitle = self.newsCategoryTitles[index];
-    pageContentViewController.image = self.arrPageImages[index];
+    pageContentViewController.image = self.newsCategoryImages[index];
     pageContentViewController.pageIndex = index;
     //self.navigationItem.title = self.arrPageImages[index];
     return pageContentViewController;
 }
+
+/*- (NSUInteger) setCurrentIndex:(NSUInteger)index{
+    NSUInteger number = 0;
+    
+    return number;
+}*/
 
 #pragma mark - No of Pages Methods
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
@@ -132,6 +152,8 @@
     
     CollectionViewArticleCell *articleCell = (CollectionViewArticleCell*)[cv dequeueReusableCellWithReuseIdentifier:@"ArticleCell" forIndexPath:indexPath];
 
+    articleCell.articleTitle.text = self.articleTitles[self.topicInteger];
+    
     return articleCell;
 }
 
