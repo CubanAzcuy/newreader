@@ -7,11 +7,14 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
 import mmilord.newsreader.common.interfaces.ButtonClicked;
 import mmilord.newsreader.models.Article;
+import mmilord.newsreader.models.Topic;
 
 public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<Article> {
     
@@ -19,7 +22,9 @@ public class TopicHomeScreenActivity extends AppCompatActivity implements Button
     protected ViewPager genrePagerView;
 
     private TopicFragment _topicFragment;
-    private TopicPagerAdapter _topicPagerAdapter;
+    private TopicFragmentAdapter _topicPagerAdapter;
+
+    ArrayList<Topic> _topics = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,34 +37,23 @@ public class TopicHomeScreenActivity extends AppCompatActivity implements Button
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-      /*  _topicPagerAdapter = new TopicPagerAdapter(getSupportFragmentManager());
+        _topics.add(new Topic("News"));
+        _topics.add(new Topic("News"));
+        _topics.add(new Topic("News"));
+
+        _topicPagerAdapter = new TopicFragmentAdapter(getSupportFragmentManager());
+        _topicPagerAdapter.setCollection(_topics);
         genrePagerView.setAdapter(_topicPagerAdapter);
-        genrePagerView.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) { }
-        });
-*/
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        _topicFragment = new TopicFragment();
-        fragmentTransaction.add(R.id.frame_container, _topicFragment).commit();
+        _topicPagerAdapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (genrePagerView.getCurrentItem() == 0)
-            super.onBackPressed();
-        else
-            genrePagerView.setCurrentItem(genrePagerView.getCurrentItem() - 1);
-    }
-
-    public void switchContent(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.pager_genre, fragment).commit();
-
-    }
 
     @Override
     public void onClick(Article object) {
-        _topicFragment.onClick(object);
+
+        if(_topicPagerAdapter.getRegisteredFragment(genrePagerView.getCurrentItem()) instanceof TopicFragment) {
+            TopicFragment currentFragment = (TopicFragment) _topicPagerAdapter.getRegisteredFragment(genrePagerView.getCurrentItem());
+            currentFragment.onClick(object);
+        }
     }
 }

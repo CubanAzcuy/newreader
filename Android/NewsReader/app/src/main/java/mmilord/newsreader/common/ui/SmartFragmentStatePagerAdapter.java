@@ -1,4 +1,4 @@
-package mmilord.newsreader.pages;
+package mmilord.newsreader.common.ui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,9 +6,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-/**
- * Created by milord on 01-Jan-16.
- */
+/*
+   Extension of FragmentStatePagerAdapter which intelligently caches 
+   all active fragments and manages the fragment lifecycles. 
+   Usage involves extending from SmartFragmentStatePagerAdapter as you would any other PagerAdapter.
+*/
 public abstract class SmartFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
     // Sparse array to keep track of registered fragments in memory
     private SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();

@@ -17,7 +17,7 @@ public class ArticleFragment extends Fragment {
     public static final String ARG_TITLE = "title";
     private String articleNum;
 
-    public static ArticleFragment craete(String articleNum) {
+    public static ArticleFragment newInstance(String articleNum) {
         ArticleFragment fragment = new ArticleFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TITLE, articleNum);

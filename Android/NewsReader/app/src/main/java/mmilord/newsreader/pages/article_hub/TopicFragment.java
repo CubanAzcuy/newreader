@@ -15,6 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
 import mmilord.newsreader.models.Article;
+import mmilord.newsreader.models.Topic;
 
 /**
  * Created by milord on 06-Jan-16.
@@ -32,10 +33,11 @@ public class TopicFragment extends Fragment{
 
     private ArticleFeedAdpater _articleFeedAdapter;
     private ArrayList<Article> _elements = new ArrayList<>();
+    private Topic _topic;
 
-    public static TopicFragment newInstance(int pageNumber, String title) {
+    public static TopicFragment newInstance(int pageNumber, Topic topic) {
         TopicFragment fragment = new TopicFragment();
-        fragment.setTitle(title);
+        fragment.setTopic(topic);
         fragment.setPageNumber(pageNumber);
 
         return fragment;
@@ -58,7 +60,7 @@ public class TopicFragment extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle bundle){
 
-        _textHeader.setText(_title);
+        _textHeader.setText(_topic.getTitle());
 
         Article article;
         for (int i = 0; i < 10; i++) {
@@ -78,8 +80,8 @@ public class TopicFragment extends Fragment{
         return _pageNumber;
     }
 
-    public void setTitle(String title) {
-        _title = title;
+    public void setTopic(Topic topic) {
+        _topic = topic;
     }
 
     public void setPageNumber(int pageNumber) {
@@ -93,4 +95,6 @@ public class TopicFragment extends Fragment{
         _articleFeedAdapter.notifyItemRemoved(index);
         _articleFeedAdapter.notifyItemRangeChanged(index, _elements.size());
     }
+
+
 }
