@@ -14,8 +14,10 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
+import mmilord.newsreader.common.ui.BaseRecyclerViewAdapter;
 import mmilord.newsreader.models.Article;
 import mmilord.newsreader.models.Topic;
+import mmilord.newsreader.pages.article_hub.factory.ArticleCardViewHolderFactory;
 
 /**
  * Created by milord on 06-Jan-16.
@@ -28,12 +30,12 @@ public class TopicFragment extends Fragment{
     @Bind(R.id.recycler_articles)
     RecyclerView _articleFeed;
 
-    private String _title;
     private int _pageNumber;
-
-    private ArticleFeedAdpater _articleFeedAdapter;
-    private ArrayList<Article> _elements = new ArrayList<>();
     private Topic _topic;
+
+    private BaseRecyclerViewAdapter<Article> _articleFeedAdapter;
+    private ArticleCardViewHolderFactory _articleCardViewHolderFactory = new ArticleCardViewHolderFactory();
+    private ArrayList<Article> _elements = new ArrayList<>();
 
     public static TopicFragment newInstance(int pageNumber, Topic topic) {
         TopicFragment fragment = new TopicFragment();
@@ -71,7 +73,7 @@ public class TopicFragment extends Fragment{
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
         _articleFeed.setLayoutManager(layoutManager);
-        _articleFeedAdapter = new ArticleFeedAdpater();
+        _articleFeedAdapter = new BaseRecyclerViewAdapter<Article>(_articleCardViewHolderFactory);
         _articleFeedAdapter.setCollection(_elements);
         _articleFeed.setAdapter(_articleFeedAdapter);
     }

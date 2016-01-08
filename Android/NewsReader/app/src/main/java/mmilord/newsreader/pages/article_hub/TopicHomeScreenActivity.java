@@ -12,18 +12,20 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
+import mmilord.newsreader.common.interfaces.BaseFragmentFactory;
 import mmilord.newsreader.common.interfaces.ButtonClicked;
+import mmilord.newsreader.common.ui.BaseFragmentAdapter;
 import mmilord.newsreader.models.Article;
 import mmilord.newsreader.models.Topic;
+import mmilord.newsreader.pages.article_hub.factory.TopicFragmentFactroy;
 
 public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<Article> {
     
     @Bind(R.id.pager_genre)
     protected ViewPager genrePagerView;
 
-    private TopicFragment _topicFragment;
-    private TopicFragmentAdapter _topicPagerAdapter;
-
+    private BaseFragmentAdapter<Topic> _topicPagerAdapter;
+    private TopicFragmentFactroy _topicBaseFragmentFactory = new TopicFragmentFactroy();
     ArrayList<Topic> _topics = new ArrayList<>();
 
     @Override
@@ -41,7 +43,7 @@ public class TopicHomeScreenActivity extends AppCompatActivity implements Button
         _topics.add(new Topic("News"));
         _topics.add(new Topic("News"));
 
-        _topicPagerAdapter = new TopicFragmentAdapter(getSupportFragmentManager());
+        _topicPagerAdapter = new BaseFragmentAdapter(getSupportFragmentManager(), _topicBaseFragmentFactory);
         _topicPagerAdapter.setCollection(_topics);
         genrePagerView.setAdapter(_topicPagerAdapter);
         _topicPagerAdapter.notifyDataSetChanged();
