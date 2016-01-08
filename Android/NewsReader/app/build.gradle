@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
 }
 
 dependencies {
@@ -25,4 +28,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile "com.android.support:leanback-v17:+"
     compile 'com.android.support:recyclerview-v7:22+'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
+
+
+

@@ -7,29 +7,39 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
-    private GenrePagerFragment genrePagerFragment;
-    private ViewPager genrePagerView;
-    private GenrePagerAdapter genrePagerAdapter;
+public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<Article> {
+    
+    @Bind(R.id.pager_genre)
+    protected ViewPager genrePagerView;
+
+    private TopicFragment _topicFragment;
+    private TopicPagerAdapter _topicPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.topic_homescreen_activity);
+        ButterKnife.bind(this);
+    }
 
-        genrePagerView = (ViewPager) findViewById(R.id.pager_genre);
-        genrePagerAdapter = new GenrePagerAdapter(getSupportFragmentManager());
-        genrePagerView.setAdapter(genrePagerAdapter);
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+      /*  _topicPagerAdapter = new TopicPagerAdapter(getSupportFragmentManager());
+        genrePagerView.setAdapter(_topicPagerAdapter);
         genrePagerView.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) { }
         });
-
+*/
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        genrePagerFragment = new GenrePagerFragment();
-        fragmentTransaction.add(R.id.pager_genre, genrePagerFragment).commit();
+        _topicFragment = new TopicFragment();
+        fragmentTransaction.add(R.id.frame_container, _topicFragment).commit();
     }
 
     @Override
@@ -43,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
     public void switchContent(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.pager_genre, fragment).commit();
 
+    }
+
+    @Override
+    public void onClick(Article object) {
+        _topicFragment.onClick(object);
     }
 }
