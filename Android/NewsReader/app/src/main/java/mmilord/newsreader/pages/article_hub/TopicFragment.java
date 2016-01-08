@@ -15,8 +15,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
 import mmilord.newsreader.common.ui.BaseRecyclerViewAdapter;
-import mmilord.newsreader.models.Article;
-import mmilord.newsreader.models.Topic;
+import mmilord.newsreader.viewmodel.ArticleViewModel;
+import mmilord.newsreader.viewmodel.TopicViewModel;
 import mmilord.newsreader.pages.article_hub.factory.ArticleCardViewHolderFactory;
 
 /**
@@ -31,15 +31,15 @@ public class TopicFragment extends Fragment{
     RecyclerView _articleFeed;
 
     private int _pageNumber;
-    private Topic _topic;
+    private TopicViewModel _topicViewModel;
 
-    private BaseRecyclerViewAdapter<Article> _articleFeedAdapter;
+    private BaseRecyclerViewAdapter<ArticleViewModel> _articleFeedAdapter;
     private ArticleCardViewHolderFactory _articleCardViewHolderFactory = new ArticleCardViewHolderFactory();
-    private ArrayList<Article> _elements = new ArrayList<>();
+    private ArrayList<ArticleViewModel> _elements = new ArrayList<>();
 
-    public static TopicFragment newInstance(int pageNumber, Topic topic) {
+    public static TopicFragment newInstance(int pageNumber, TopicViewModel topicViewModel) {
         TopicFragment fragment = new TopicFragment();
-        fragment.setTopic(topic);
+        fragment.setTopicViewModel(topicViewModel);
         fragment.setPageNumber(pageNumber);
 
         return fragment;
@@ -62,18 +62,18 @@ public class TopicFragment extends Fragment{
     @Override
     public void onViewCreated(View view, Bundle bundle){
 
-        _textHeader.setText(_topic.getTitle());
+        _textHeader.setText(_topicViewModel.getTitle());
 
-        Article article;
+        ArticleViewModel articleViewModel;
         for (int i = 0; i < 10; i++) {
-            article = new Article("Open article " + i);
-            _elements.add(i, article);
+            articleViewModel = new ArticleViewModel("Open articleViewModel " + i);
+            _elements.add(i, articleViewModel);
         }
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
         _articleFeed.setLayoutManager(layoutManager);
-        _articleFeedAdapter = new BaseRecyclerViewAdapter<Article>(_articleCardViewHolderFactory);
+        _articleFeedAdapter = new BaseRecyclerViewAdapter<ArticleViewModel>(_articleCardViewHolderFactory);
         _articleFeedAdapter.setCollection(_elements);
         _articleFeed.setAdapter(_articleFeedAdapter);
     }
@@ -82,15 +82,15 @@ public class TopicFragment extends Fragment{
         return _pageNumber;
     }
 
-    public void setTopic(Topic topic) {
-        _topic = topic;
+    public void setTopicViewModel(TopicViewModel topicViewModel) {
+        _topicViewModel = topicViewModel;
     }
 
     public void setPageNumber(int pageNumber) {
         _pageNumber = pageNumber;
     }
 
-    public void onClick(Article object) {
+    public void onClick(ArticleViewModel object) {
         int index = _elements.indexOf(object);
         _elements.remove(object);
         _articleFeedAdapter.setCollection(_elements);

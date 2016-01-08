@@ -1,4 +1,4 @@
-package mmilord.newsreader.models;
+package mmilord.newsreader.viewmodel;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,10 +6,10 @@ import android.os.Parcelable;
 /**
  * Created by robertgross on 1/7/16.
  */
-public class Article implements Parcelable {
+public class ArticleViewModel implements Parcelable {
     String _title;
 
-    public Article(String title) {
+    public ArticleViewModel(String title) {
         _title = title;
     }
 
@@ -17,8 +17,8 @@ public class Article implements Parcelable {
     public boolean equals(Object other){
         if (other == null) return false;
         if (other == this) return true;
-        if (!(other instanceof Article))return false;
-        if (((Article) other).getTitle().equals(_title)) return true;
+        if (!(other instanceof ArticleViewModel))return false;
+        if (((ArticleViewModel) other).getTitle().equals(_title)) return true;
         return false;
     }
 
@@ -37,17 +37,17 @@ public class Article implements Parcelable {
         dest.writeString(this._title);
     }
 
-    protected Article(Parcel in) {
+    protected ArticleViewModel(Parcel in) {
         this._title = in.readString();
     }
 
-    public static final Creator<Article> CREATOR = new Creator<Article>() {
-        public Article createFromParcel(Parcel source) {
-            return new Article(source);
+    public static final Creator<ArticleViewModel> CREATOR = new Creator<ArticleViewModel>() {
+        public ArticleViewModel createFromParcel(Parcel source) {
+            return new ArticleViewModel(source);
         }
 
-        public Article[] newArray(int size) {
-            return new Article[size];
+        public ArticleViewModel[] newArray(int size) {
+            return new ArticleViewModel[size];
         }
     };
 }

@@ -8,15 +8,15 @@ import android.widget.TextView;
 import butterknife.Bind;
 import mmilord.newsreader.R;
 import mmilord.newsreader.common.interfaces.ButtonClicked;
-import mmilord.newsreader.models.Article;
+import mmilord.newsreader.viewmodel.ArticleViewModel;
 import mmilord.newsreader.common.ui.BaseViewHolder;
 
 /**
  * Created by robertgross on 1/7/16.
  */
-public class ArticleCardViewHolder extends BaseViewHolder<Article> implements View.OnClickListener {
+public class ArticleCardViewHolder extends BaseViewHolder<ArticleViewModel> implements View.OnClickListener {
 
-    Article _article;
+    ArticleViewModel _articleViewModel;
 
     @Bind(R.id.recycler_element_article_title)
     TextView _title;
@@ -34,9 +34,9 @@ public class ArticleCardViewHolder extends BaseViewHolder<Article> implements Vi
 
 
     @Override
-    public void bind(Article task) {
+    public void bind(ArticleViewModel task) {
         super.bind(task);
-        _article = task;
+        _articleViewModel = task;
         _title.setText(task.getTitle());
     }
 
@@ -44,7 +44,7 @@ public class ArticleCardViewHolder extends BaseViewHolder<Article> implements Vi
     public void onClick(View view){
         if(view.getContext() instanceof ButtonClicked){
             ButtonClicked buttonClicked = (ButtonClicked) view.getContext();
-            buttonClicked.onClick(_article);
+            buttonClicked.onClick(_articleViewModel);
         }
     }
 

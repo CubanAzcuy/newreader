@@ -1,8 +1,5 @@
 package mmilord.newsreader.pages.article_hub;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,21 +9,21 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
-import mmilord.newsreader.common.interfaces.BaseFragmentFactory;
 import mmilord.newsreader.common.interfaces.ButtonClicked;
 import mmilord.newsreader.common.ui.BaseFragmentAdapter;
-import mmilord.newsreader.models.Article;
-import mmilord.newsreader.models.Topic;
+import mmilord.newsreader.common.ui.animations.ZoomOutPageTransformer;
+import mmilord.newsreader.viewmodel.ArticleViewModel;
+import mmilord.newsreader.viewmodel.TopicViewModel;
 import mmilord.newsreader.pages.article_hub.factory.TopicFragmentFactroy;
 
-public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<Article> {
+public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<ArticleViewModel> {
     
     @Bind(R.id.pager_genre)
-    protected ViewPager genrePagerView;
+    protected ViewPager _topicViewPager;
 
-    private BaseFragmentAdapter<Topic> _topicPagerAdapter;
+    private BaseFragmentAdapter<TopicViewModel> _topicPagerAdapter;
     private TopicFragmentFactroy _topicBaseFragmentFactory = new TopicFragmentFactroy();
-    ArrayList<Topic> _topics = new ArrayList<>();
+    ArrayList<TopicViewModel> _topicViewModels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,22 +36,23 @@ public class TopicHomeScreenActivity extends AppCompatActivity implements Button
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        _topics.add(new Topic("News"));
-        _topics.add(new Topic("News"));
-        _topics.add(new Topic("News"));
+        _topicViewModels.add(new TopicViewModel("News"));
+        _topicViewModels.add(new TopicViewModel("News"));
+        _topicViewModels.add(new TopicViewModel("News"));
 
         _topicPagerAdapter = new BaseFragmentAdapter(getSupportFragmentManager(), _topicBaseFragmentFactory);
-        _topicPagerAdapter.setCollection(_topics);
-        genrePagerView.setAdapter(_topicPagerAdapter);
+        _topicPagerAdapter.setCollection(_topicViewModels);
+        _topicViewPager.setAdapter(_topicPagerAdapter);
+        _topicViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         _topicPagerAdapter.notifyDataSetChanged();
     }
 
 
     @Override
-    public void onClick(Article object) {
+    public void onClick(ArticleViewModel object) {
 
-        if(_topicPagerAdapter.getRegisteredFragment(genrePagerView.getCurrentItem()) instanceof TopicFragment) {
-            TopicFragment currentFragment = (TopicFragment) _topicPagerAdapter.getRegisteredFragment(genrePagerView.getCurrentItem());
+        if(_topicPagerAdapter.getRegisteredFragment(_topicViewPager.getCurrentItem()) instanceof TopicFragment) {
+            TopicFragment currentFragment = (TopicFragment) _topicPagerAdapter.getRegisteredFragment(_topicViewPager.getCurrentItem());
             currentFragment.onClick(object);
         }
     }

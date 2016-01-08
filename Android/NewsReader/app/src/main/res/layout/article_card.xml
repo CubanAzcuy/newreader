@@ -9,14 +9,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="article picture"
+        android:text="articleViewModel picture"
         android:id="@+id/recycler_element_article_img"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="article title"
+        android:text="articleViewModel title"
         android:id="@+id/recycler_element_article_title"
         />
 
