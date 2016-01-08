@@ -1,4 +1,4 @@
-package mmilord.newsreader;
+package mmilord.newsreader.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

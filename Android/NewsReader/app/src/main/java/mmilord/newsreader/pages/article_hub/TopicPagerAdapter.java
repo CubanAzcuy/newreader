@@ -1,7 +1,9 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages.article_hub;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+
+import mmilord.newsreader.pages.SmartFragmentStatePagerAdapter;
 
 /**
  * Created by milord on 06-Jan-16.

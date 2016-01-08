@@ -1,17 +1,12 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages.article_hub;
 
-import android.support.v4.app.Fragment;
-import android.content.Context;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import mmilord.newsreader.models.Article;
+import mmilord.newsreader.common.ui.BaseViewHolder;
 
 /**
  * Created by milord on 06-Jan-16.

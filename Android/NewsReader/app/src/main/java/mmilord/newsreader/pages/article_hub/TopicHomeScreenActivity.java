@@ -1,4 +1,4 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages.article_hub;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +9,9 @@ import android.os.Bundle;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import mmilord.newsreader.R;
+import mmilord.newsreader.common.interfaces.ButtonClicked;
+import mmilord.newsreader.models.Article;
 
 public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<Article> {
     

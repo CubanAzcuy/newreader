@@ -1,4 +1,4 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages.article_hub;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import mmilord.newsreader.R;
 
 /**
  * Created by milord on 07-Jan-16.

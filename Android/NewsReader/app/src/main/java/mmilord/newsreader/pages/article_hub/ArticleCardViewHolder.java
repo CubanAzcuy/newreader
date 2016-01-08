@@ -1,12 +1,15 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages.article_hub;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.Bind;
+import mmilord.newsreader.R;
+import mmilord.newsreader.common.interfaces.ButtonClicked;
+import mmilord.newsreader.models.Article;
+import mmilord.newsreader.common.ui.BaseViewHolder;
 
 /**
  * Created by robertgross on 1/7/16.

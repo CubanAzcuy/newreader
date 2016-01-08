@@ -1,4 +1,4 @@
-package mmilord.newsreader;
+package mmilord.newsreader.pages;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
