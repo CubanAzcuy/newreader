@@ -1,10 +1,10 @@
-package mmilord.newsreader.pages.article_hub.factory;
+package mmilord.newsreader.views.article_hub.factory;
 
 import android.support.v4.app.Fragment;
 
-import mmilord.newsreader.common.interfaces.BaseFragmentFactory;
+import mmilord.newsreader.views.common.interfaces.BaseFragmentFactory;
 import mmilord.newsreader.viewmodel.TopicViewModel;
-import mmilord.newsreader.pages.article_hub.TopicFragment;
+import mmilord.newsreader.views.article_hub.TopicFragment;
 
 /**
  * Created by robertgross on 1/8/16.

@@ -1,4 +1,4 @@
-package mmilord.newsreader.pages.article_hub;
+package mmilord.newsreader.views.article_hub;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import mmilord.newsreader.R;
-import mmilord.newsreader.common.interfaces.ButtonClicked;
+import mmilord.newsreader.views.common.interfaces.ButtonClicked;
 import mmilord.newsreader.viewmodel.ArticleViewModel;
-import mmilord.newsreader.common.ui.BaseViewHolder;
+import mmilord.newsreader.views.common.ui.BaseViewHolder;
 
 /**
  * Created by robertgross on 1/7/16.

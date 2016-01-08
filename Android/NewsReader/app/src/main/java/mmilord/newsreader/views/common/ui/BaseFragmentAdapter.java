@@ -1,11 +1,11 @@
-package mmilord.newsreader.common.ui;
+package mmilord.newsreader.views.common.ui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 import java.util.List;
 
-import mmilord.newsreader.common.interfaces.BaseFragmentFactory;
+import mmilord.newsreader.views.common.interfaces.BaseFragmentFactory;
 
 /**
  * Created by robertgross on 1/8/16.

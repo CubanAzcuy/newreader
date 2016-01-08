@@ -1,4 +1,4 @@
-package mmilord.newsreader.pages.article_hub;
+package mmilord.newsreader.views.article_hub;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
-import mmilord.newsreader.common.ui.BaseRecyclerViewAdapter;
+import mmilord.newsreader.views.common.ui.BaseRecyclerViewAdapter;
 import mmilord.newsreader.viewmodel.ArticleViewModel;
 import mmilord.newsreader.viewmodel.TopicViewModel;
-import mmilord.newsreader.pages.article_hub.factory.ArticleCardViewHolderFactory;
+import mmilord.newsreader.views.article_hub.factory.ArticleCardViewHolderFactory;
 
 /**
  * Created by milord on 06-Jan-16.

@@ -1,4 +1,4 @@
-package mmilord.newsreader.pages.article_hub;
+package mmilord.newsreader.views.article_hub;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
-import mmilord.newsreader.common.interfaces.ButtonClicked;
-import mmilord.newsreader.common.ui.BaseFragmentAdapter;
-import mmilord.newsreader.common.ui.animations.ZoomOutPageTransformer;
+import mmilord.newsreader.views.common.interfaces.ButtonClicked;
+import mmilord.newsreader.views.common.ui.BaseFragmentAdapter;
+import mmilord.newsreader.views.common.ui.animations.ZoomOutPageTransformer;
 import mmilord.newsreader.viewmodel.ArticleViewModel;
 import mmilord.newsreader.viewmodel.TopicViewModel;
-import mmilord.newsreader.pages.article_hub.factory.TopicFragmentFactroy;
+import mmilord.newsreader.views.article_hub.factory.TopicFragmentFactroy;
 
 public class TopicHomeScreenActivity extends AppCompatActivity implements ButtonClicked<ArticleViewModel> {
     

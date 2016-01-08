@@ -1,4 +1,4 @@
-package mmilord.newsreader.common.ui;
+package mmilord.newsreader.views.common.ui;
 
 /**
  * Created by robertgross on 1/8/16.

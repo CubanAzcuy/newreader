@@ -1,4 +1,4 @@
-package mmilord.newsreader.common.ui;
+package mmilord.newsreader.views.common.ui;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;

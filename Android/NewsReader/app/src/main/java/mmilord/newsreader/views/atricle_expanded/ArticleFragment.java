@@ -1,4 +1,4 @@
-package mmilord.newsreader.pages.atricle_expanded;
+package mmilord.newsreader.views.atricle_expanded;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

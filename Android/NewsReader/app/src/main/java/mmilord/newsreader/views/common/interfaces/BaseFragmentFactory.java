@@ -1,4 +1,4 @@
-package mmilord.newsreader.common.interfaces;
+package mmilord.newsreader.views.common.interfaces;
 
 import android.support.v4.app.Fragment;
 

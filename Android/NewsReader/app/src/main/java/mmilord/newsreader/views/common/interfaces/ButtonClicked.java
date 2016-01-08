@@ -1,4 +1,4 @@
-package mmilord.newsreader.common.interfaces;
+package mmilord.newsreader.views.common.interfaces;
 
 /**
  * Created by robertgross on 1/7/16.

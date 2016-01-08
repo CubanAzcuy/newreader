@@ -1,4 +1,4 @@
-package mmilord.newsreader.common.ui.animations;
+package mmilord.newsreader.views.common.ui.animations;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
