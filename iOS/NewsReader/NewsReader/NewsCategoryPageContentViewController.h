@@ -13,9 +13,9 @@
 
 @property NSUInteger pageIndex;
 @property (strong, nonatomic) IBOutlet UILabel *articleTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *newsCategoryLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property NSString *txtTitle;
 @property NSString *image;
-@property (strong, nonatomic) IBOutlet ArticleScrollerCollectionView *articleCollectionView;
 
 @end

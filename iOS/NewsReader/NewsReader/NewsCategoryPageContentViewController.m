@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.articleTitleLabel.text = self.txtTitle;
+    self.newsCategoryLabel.text = self.txtTitle;
     self.backgroundImage.image = [UIImage imageNamed:self.image];
 
     // Do any additional setup after loading the view.

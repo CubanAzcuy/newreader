@@ -14,9 +14,14 @@
 
 @implementation ArticleScrollerCollectionView
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"ArticleCell";
 
-
+- (id)init {
+    if ((self = [super init])) {
+        
+    }
+    return self;
+}
 
 /*
 #pragma mark - Navigation

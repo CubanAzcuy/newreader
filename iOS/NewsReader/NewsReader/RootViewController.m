@@ -7,8 +7,11 @@
 //
 
 #import "RootViewController.h"
+#import "CollectionViewArticleCell.h"
 
 @interface RootViewController ()
+
+@property (strong, nonatomic) IBOutlet ArticleScrollerCollectionView *collectionView;
 
 @end
 
@@ -27,8 +30,8 @@
                                    action:nil];
     self.navigationItem.leftBarButtonItem = menuButton;
     
-    newsCategoryTitles = @[@"Sports",@"Crime",@"Technology"];
-    arrPageImages =@[@"1.png",@"2.png",@"3.png"];
+    newsCategoryTitles = @[@"Sports",@"Crime",@"Technology", @"Politics"];
+    arrPageImages =@[@"1.png",@"2.png",@"3.png", @"4.png"];
     
     self.PageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.PageViewController.dataSource = self;
@@ -42,6 +45,11 @@
     [self addChildViewController:PageViewController];
     [self.view addSubview:PageViewController.view];
     [self.PageViewController didMoveToParentViewController:self];
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    [self.view bringSubviewToFront:self.collectionView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,10 +95,13 @@
         return nil;
     }
     
+    NSLog(@"%d", index);
+    
     NewsCategoryPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsCategoryPageContentViewController"];
     pageContentViewController.txtTitle = self.newsCategoryTitles[index];
     pageContentViewController.image = self.arrPageImages[index];
     pageContentViewController.pageIndex = index;
+    //self.navigationItem.title = self.arrPageImages[index];
     return pageContentViewController;
 }
 
@@ -105,10 +116,23 @@
     return 0;
 }
 
-- (IBAction)btnStartAgain:(id)sender
-{
-    NewsCategoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.PageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    
+    return 1;
 }
+
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return [self.newsCategoryTitles count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    UINib *nib = [UINib nibWithNibName:@"CollectionViewArticleCell" bundle: nil];
+    [cv registerNib:nib forCellWithReuseIdentifier:@"ArticleCell"];
+    
+    CollectionViewArticleCell *articleCell = (CollectionViewArticleCell*)[cv dequeueReusableCellWithReuseIdentifier:@"ArticleCell" forIndexPath:indexPath];
+
+    return articleCell;
+}
+
 @end

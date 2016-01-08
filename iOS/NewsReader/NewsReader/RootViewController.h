@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NewsCategoryPageContentViewController.h"
 
-@interface RootViewController : UIViewController <UIPageViewControllerDataSource>
+@interface RootViewController : UIViewController <UIPageViewControllerDataSource, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UIPageViewController *PageViewController;
 @property (nonatomic,strong) NSArray *newsCategoryTitles;

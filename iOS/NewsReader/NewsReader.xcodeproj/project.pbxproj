@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F5EDA3B1C40469B00603452 /* CollectionViewArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */; };
+		8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */; };
 		8FE12E231C3F63620003942F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E221C3F63620003942F /* main.m */; };
 		8FE12E261C3F63620003942F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E251C3F63620003942F /* AppDelegate.m */; };
-		8FE12E291C3F63620003942F /* ScrollableNewsCategoryPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E281C3F63620003942F /* ScrollableNewsCategoryPageViewController.m */; };
 		8FE12E2C1C3F63620003942F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE12E2A1C3F63620003942F /* Main.storyboard */; };
 		8FE12E2F1C3F63620003942F /* NewsReader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E2D1C3F63620003942F /* NewsReader.xcdatamodeld */; };
 		8FE12E311C3F63620003942F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FE12E301C3F63620003942F /* Assets.xcassets */; };
@@ -17,7 +18,6 @@
 		8FE12E3F1C3F63630003942F /* NewsReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E3E1C3F63630003942F /* NewsReaderTests.m */; };
 		8FE12E4A1C3F63630003942F /* NewsReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E491C3F63630003942F /* NewsReaderUITests.m */; };
 		8FE12E5A1C3F67530003942F /* ArticleScrollerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E581C3F67530003942F /* ArticleScrollerCollectionView.m */; };
-		8FE12E5B1C3F67530003942F /* ArticleScrollerCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FE12E591C3F67530003942F /* ArticleScrollerCollectionView.xib */; };
 		8FE12E5E1C3F6A040003942F /* NewsCategoryPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E5D1C3F6A040003942F /* NewsCategoryPageContentViewController.m */; };
 		8FE12E611C3F6C980003942F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E601C3F6C980003942F /* RootViewController.m */; };
 /* End PBXBuildFile section */
@@ -40,12 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F5EDA381C40469B00603452 /* CollectionViewArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewArticleCell.h; sourceTree = "<group>"; };
+		8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewArticleCell.m; sourceTree = "<group>"; };
+		8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewArticleCell.xib; sourceTree = "<group>"; };
 		8FE12E1E1C3F63610003942F /* NewsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE12E221C3F63620003942F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FE12E241C3F63620003942F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FE12E251C3F63620003942F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8FE12E271C3F63620003942F /* ScrollableNewsCategoryPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollableNewsCategoryPageViewController.h; sourceTree = "<group>"; };
-		8FE12E281C3F63620003942F /* ScrollableNewsCategoryPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollableNewsCategoryPageViewController.m; sourceTree = "<group>"; };
 		8FE12E2B1C3F63620003942F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FE12E2E1C3F63620003942F /* NewsReader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsReader.xcdatamodel; sourceTree = "<group>"; };
 		8FE12E301C3F63620003942F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		8FE12E4B1C3F63630003942F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FE12E571C3F67530003942F /* ArticleScrollerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleScrollerCollectionView.h; sourceTree = "<group>"; };
 		8FE12E581C3F67530003942F /* ArticleScrollerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleScrollerCollectionView.m; sourceTree = "<group>"; };
-		8FE12E591C3F67530003942F /* ArticleScrollerCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleScrollerCollectionView.xib; sourceTree = "<group>"; };
 		8FE12E5C1C3F6A040003942F /* NewsCategoryPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategoryPageContentViewController.h; sourceTree = "<group>"; };
 		8FE12E5D1C3F6A040003942F /* NewsCategoryPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategoryPageContentViewController.m; sourceTree = "<group>"; };
 		8FE12E5F1C3F6C980003942F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -119,13 +119,13 @@
 				8FE12E2A1C3F63620003942F /* Main.storyboard */,
 				8FE12E5F1C3F6C980003942F /* RootViewController.h */,
 				8FE12E601C3F6C980003942F /* RootViewController.m */,
-				8FE12E271C3F63620003942F /* ScrollableNewsCategoryPageViewController.h */,
-				8FE12E281C3F63620003942F /* ScrollableNewsCategoryPageViewController.m */,
 				8FE12E5C1C3F6A040003942F /* NewsCategoryPageContentViewController.h */,
 				8FE12E5D1C3F6A040003942F /* NewsCategoryPageContentViewController.m */,
 				8FE12E571C3F67530003942F /* ArticleScrollerCollectionView.h */,
 				8FE12E581C3F67530003942F /* ArticleScrollerCollectionView.m */,
-				8FE12E591C3F67530003942F /* ArticleScrollerCollectionView.xib */,
+				8F5EDA381C40469B00603452 /* CollectionViewArticleCell.h */,
+				8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */,
+				8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */,
 				8FE12E301C3F63620003942F /* Assets.xcassets */,
 				8FE12E321C3F63620003942F /* LaunchScreen.storyboard */,
 				8FE12E351C3F63620003942F /* Info.plist */,
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE12E341C3F63620003942F /* LaunchScreen.storyboard in Resources */,
-				8FE12E5B1C3F67530003942F /* ArticleScrollerCollectionView.xib in Resources */,
+				8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */,
 				8FE12E311C3F63620003942F /* Assets.xcassets in Resources */,
 				8FE12E2C1C3F63620003942F /* Main.storyboard in Resources */,
 			);
@@ -294,7 +294,7 @@
 			files = (
 				8FE12E5E1C3F6A040003942F /* NewsCategoryPageContentViewController.m in Sources */,
 				8FE12E611C3F6C980003942F /* RootViewController.m in Sources */,
-				8FE12E291C3F63620003942F /* ScrollableNewsCategoryPageViewController.m in Sources */,
+				8F5EDA3B1C40469B00603452 /* CollectionViewArticleCell.m in Sources */,
 				8FE12E261C3F63620003942F /* AppDelegate.m in Sources */,
 				8FE12E231C3F63620003942F /* main.m in Sources */,
 				8FE12E5A1C3F67530003942F /* ArticleScrollerCollectionView.m in Sources */,
@@ -526,6 +526,7 @@
 				8FE12E501C3F63630003942F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FE12E511C3F63630003942F /* Build configuration list for PBXNativeTarget "NewsReaderTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +535,7 @@
 				8FE12E531C3F63630003942F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FE12E541C3F63630003942F /* Build configuration list for PBXNativeTarget "NewsReaderUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +544,7 @@
 				8FE12E561C3F63630003942F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
