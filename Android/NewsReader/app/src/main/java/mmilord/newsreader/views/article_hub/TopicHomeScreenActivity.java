@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import mmilord.newsreader.R;
+import mmilord.newsreader.core.resources.RetrofitObject;
 import mmilord.newsreader.views.common.interfaces.ButtonClicked;
 import mmilord.newsreader.views.common.ui.BaseFragmentAdapter;
 import mmilord.newsreader.views.common.ui.animations.ZoomOutPageTransformer;
@@ -30,6 +31,7 @@ public class TopicHomeScreenActivity extends AppCompatActivity implements Button
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topic_homescreen_activity);
         ButterKnife.bind(this);
+        RetrofitObject.callsomethings();
     }
 
     @Override
