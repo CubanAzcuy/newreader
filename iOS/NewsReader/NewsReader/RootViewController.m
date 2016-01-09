@@ -8,23 +8,25 @@
 
 #import "RootViewController.h"
 #import "CollectionViewArticleCell.h"
+#import "TopicView.h"
 
 @interface RootViewController ()
 
-@property (strong, nonatomic) IBOutlet ArticleScrollerCollectionView *collectionView;
-@property (nonatomic,assign) NSUInteger topicInteger;
+@property (nonatomic,assign) NSUInteger topicIndex;
 @property (nonatomic,assign) NSUInteger previousTopicInteger;
-
+@property (nonatomic,assign) NSUInteger scrollViewWidth;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic,assign) CGFloat screenWidth;
 @end
 
 @implementation RootViewController
 
-@synthesize PageViewController,newsCategoryTitles,newsCategoryImages, articleTitles;
+@synthesize newsCategoryTitles,newsCategoryImages, articleTitles;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     UIBarButtonItem *menuButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Menu"
                                    style:UIBarButtonItemStylePlain
@@ -32,28 +34,33 @@
                                    action:nil];
     self.navigationItem.leftBarButtonItem = menuButton;
     
+    //fake data
     newsCategoryTitles = @[@"Sports",@"Crime",@"Technology", @"Politics"];
     newsCategoryImages =@[@"1.png",@"2.png",@"3.png", @"4.png"];
     articleTitles = @[@"Steph Curry scores 200 points in one game!", @"Midtown crime at an all-time high!", @"Apple releases the iPhone8c, now with real gold!", @"Trump has change of heart about Muslims after eating falafel!"];
     
-    self.PageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-    self.PageViewController.dataSource = self;
-    self.PageViewController.delegate = self;
+    [self.navigationItem setTitle:self.newsCategoryTitles[0]];
     
-    NewsCategoryPageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.PageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    //screen width
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self.screenWidth = screenRect.size.width;
     
-    self.PageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    //scrollview
+    self.scrollView.delegate = self;
+    self.scrollView.pagingEnabled = YES;
+    [self.scrollView setContentSize:CGSizeMake(self.screenWidth*self.newsCategoryTitles.count, self.scrollView.frame.size.height)];
     
-    [self addChildViewController:PageViewController];
-    [self.view addSubview:PageViewController.view];
-    [self.PageViewController didMoveToParentViewController:self];
-    
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    
-    [self.view bringSubviewToFront:self.collectionView];
+    //adding news categories to scrollview
+    for (int i = 0; i < newsCategoryTitles.count; i++){
+        TopicView *contentView = [[[NSBundle mainBundle] loadNibNamed:@"TopicView" owner:self options:nil] objectAtIndex:0];
+        contentView.frame = CGRectMake(self.screenWidth * i, 0, self.screenWidth, self.scrollView.frame.size.height);
+        contentView.backgroundImage.image = [UIImage imageNamed:self.newsCategoryImages[i]];
+        contentView.articleCollectionView.delegate = self;
+        contentView.articleCollectionView.dataSource = self;
+        contentView.tag = i;
+        [self.view bringSubviewToFront:contentView.articleCollectionView];
+        [self.scrollView addSubview:contentView];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,81 +68,20 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Page View Datasource Methods
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((NewsCategoryPageContentViewController*) viewController).pageIndex;
-    
-    if ((index == 0) || (index == NSNotFound))
-    {
-        return nil;
+#pragma mark - ScrollView Methods
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat offset = scrollView.contentOffset.x;
+    int index = offset/self.screenWidth;
+    [self.navigationItem setTitle:self.newsCategoryTitles[index]];
+    for (TopicView *view in [self.scrollView subviews]){
+        if(view.tag == index && view.tag != 0){
+            self.topicIndex = index;
+            [view.articleCollectionView reloadData];
+        }
     }
-    
-    index--;
-    self.topicInteger = index;
-    return [self viewControllerAtIndex:index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
-    NSUInteger index = ((NewsCategoryPageContentViewController*) viewController).pageIndex;
-    
-    if (index == NSNotFound)
-    {
-        return nil;
-    }
-    
-    index++;
-    if (index == [self.newsCategoryTitles count])
-    {
-        return nil;
-    }
-    
-    self.topicInteger = index;
-    NSLog(@"%d", self.topicInteger);
-    return [self viewControllerAtIndex:index];
-}
-
-- (void)pageViewController:(UIPageViewController *)pageViewController
-willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers{
-    //article collection view refresh logic here
-    [self.collectionView setContentOffset:CGPointZero animated:YES];
-    [self.collectionView reloadData];
-    
-    }
-
-#pragma mark - Other Methods
-- (NewsCategoryPageContentViewController *)viewControllerAtIndex:(NSUInteger)index
-{
-    if (([self.newsCategoryTitles count] == 0) || (index >= [self.newsCategoryTitles count])) {
-        return nil;
-    }
-    
-    NewsCategoryPageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsCategoryPageContentViewController"];
-    pageContentViewController.txtTitle = self.newsCategoryTitles[index];
-    pageContentViewController.image = self.newsCategoryImages[index];
-    pageContentViewController.pageIndex = index;
-    //self.navigationItem.title = self.arrPageImages[index];
-    return pageContentViewController;
-}
-
-/*- (NSUInteger) setCurrentIndex:(NSUInteger)index{
-    NSUInteger number = 0;
-    
-    return number;
-}*/
-
-#pragma mark - No of Pages Methods
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.newsCategoryTitles count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
-
+#pragma mark - CollectionView Methods
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     
     return 1;
@@ -152,9 +98,16 @@ willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewContro
     
     CollectionViewArticleCell *articleCell = (CollectionViewArticleCell*)[cv dequeueReusableCellWithReuseIdentifier:@"ArticleCell" forIndexPath:indexPath];
 
-    articleCell.articleTitle.text = self.articleTitles[self.topicInteger];
+    articleCell.articleTitle.text = self.articleTitles[self.topicIndex];
     
     return articleCell;
 }
+
+#pragma mark - Other Methods
+/*- (NSUInteger) setCurrentIndex:(NSUInteger)index{
+ NSUInteger number = 0;
+ 
+ return number;
+ }*/
 
 @end

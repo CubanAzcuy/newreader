@@ -142,44 +142,24 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wvb-bO-UpV" customClass="ArticleScrollerCollectionView">
-                                <rect key="frame" x="0.0" y="363" width="375" height="180"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.40316195101351349" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="X4c-8h-5b3"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="1000" id="Mqh-Kr-0tc">
-                                    <size key="itemSize" width="130" height="160"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArticleCell" id="ZHo-8b-Xqn" customClass="CollectionViewArticleCell">
-                                        <rect key="frame" x="5" y="10" width="130" height="160"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="130" height="160"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" red="0.68627450980000004" green="0.098039215690000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZe-sM-fVF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="0.56760294590455018" blue="0.90788424986634353" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SB7-FT-3mV" firstAttribute="top" secondItem="wvb-bO-UpV" secondAttribute="bottom" constant="60" id="UMg-GV-eOD"/>
-                            <constraint firstAttribute="trailing" secondItem="wvb-bO-UpV" secondAttribute="trailing" id="aoL-PD-8zf"/>
-                            <constraint firstItem="wvb-bO-UpV" firstAttribute="leading" secondItem="13h-os-xkd" secondAttribute="leading" id="k6E-kU-rGg"/>
+                            <constraint firstAttribute="trailing" secondItem="wZe-sM-fVF" secondAttribute="trailing" id="6eo-FH-wbE"/>
+                            <constraint firstItem="wZe-sM-fVF" firstAttribute="leading" secondItem="13h-os-xkd" secondAttribute="leading" id="QBo-sY-MtJ"/>
+                            <constraint firstItem="SB7-FT-3mV" firstAttribute="top" secondItem="wZe-sM-fVF" secondAttribute="bottom" id="ZkY-Z0-G50"/>
+                            <constraint firstItem="wZe-sM-fVF" firstAttribute="top" secondItem="dlr-om-arV" secondAttribute="bottom" id="kNO-gx-efe"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="News Category Title" id="83d-Bq-LBo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="collectionView" destination="wvb-bO-UpV" id="VSj-wy-7su"/>
+                        <outlet property="scrollView" destination="wZe-sM-fVF" id="ezb-3n-r8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qP-bk-1aw" userLabel="First Responder" sceneMemberID="firstResponder"/>
