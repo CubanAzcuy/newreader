@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521258C7A19766D9DB64FDB4 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 52125323DA335BCF32A1C2AA /* Article.m */; };
+		521258D02289CEB6D6BFF0E5 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 521250552821F22F4473752A /* Topic.m */; };
 		8F5EDA3B1C40469B00603452 /* CollectionViewArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */; };
 		8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */; };
 		8F5EDA401C406A8E00603452 /* NewsArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EDA3E1C406A8E00603452 /* NewsArticleViewController.m */; };
@@ -22,6 +24,9 @@
 		8FE12E5A1C3F67530003942F /* ArticleScrollerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E581C3F67530003942F /* ArticleScrollerCollectionView.m */; };
 		8FE12E5E1C3F6A040003942F /* NewsCategoryPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E5D1C3F6A040003942F /* NewsCategoryPageContentViewController.m */; };
 		8FE12E611C3F6C980003942F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE12E601C3F6C980003942F /* RootViewController.m */; };
+		EC4C28E31C40CEB200C94955 /* TopicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C28E21C40CEB200C94955 /* TopicPageViewController.m */; };
+		EC4C28E81C40D1C100C94955 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4C28E61C40D1C100C94955 /* TopicViewController.m */; };
+		EC4C28E91C40D1C100C94955 /* TopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4C28E71C40D1C100C94955 /* TopicViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521250552821F22F4473752A /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
+		5212529F1C499400EBB16F16 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		52125323DA335BCF32A1C2AA /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		5212562210D92F78F832CF53 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
 		8F5EDA381C40469B00603452 /* CollectionViewArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewArticleCell.h; sourceTree = "<group>"; };
 		8F5EDA391C40469B00603452 /* CollectionViewArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewArticleCell.m; sourceTree = "<group>"; };
 		8F5EDA3A1C40469B00603452 /* CollectionViewArticleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewArticleCell.xib; sourceTree = "<group>"; };
@@ -69,6 +78,11 @@
 		8FE12E5D1C3F6A040003942F /* NewsCategoryPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategoryPageContentViewController.m; sourceTree = "<group>"; };
 		8FE12E5F1C3F6C980003942F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		8FE12E601C3F6C980003942F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		EC4C28E11C40CEB200C94955 /* TopicPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPageViewController.h; sourceTree = "<group>"; };
+		EC4C28E21C40CEB200C94955 /* TopicPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPageViewController.m; sourceTree = "<group>"; };
+		EC4C28E51C40D1C100C94955 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		EC4C28E61C40D1C100C94955 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
+		EC4C28E71C40D1C100C94955 /* TopicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52125E230CE23A3E8A1DAF90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52125323DA335BCF32A1C2AA /* Article.m */,
+				5212529F1C499400EBB16F16 /* Article.h */,
+				521250552821F22F4473752A /* Topic.m */,
+				5212562210D92F78F832CF53 /* Topic.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8FE12E151C3F63610003942F = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +144,7 @@
 		8FE12E201C3F63610003942F /* NewsReader */ = {
 			isa = PBXGroup;
 			children = (
+				EC4C28E01C40CE7600C94955 /* Views */,
 				8FE12E241C3F63620003942F /* AppDelegate.h */,
 				8FE12E251C3F63620003942F /* AppDelegate.m */,
 				8FE12E2A1C3F63620003942F /* Main.storyboard */,
@@ -139,6 +165,7 @@
 				8FE12E351C3F63620003942F /* Info.plist */,
 				8FE12E2D1C3F63620003942F /* NewsReader.xcdatamodeld */,
 				8FE12E211C3F63620003942F /* Supporting Files */,
+				52125E230CE23A3E8A1DAF90 /* Models */,
 			);
 			path = NewsReader;
 			sourceTree = "<group>";
@@ -167,6 +194,26 @@
 				8FE12E4B1C3F63630003942F /* Info.plist */,
 			);
 			path = NewsReaderUITests;
+			sourceTree = "<group>";
+		};
+		EC4C28E01C40CE7600C94955 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC4C28E41C40CEBB00C94955 /* Topic Screens */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EC4C28E41C40CEBB00C94955 /* Topic Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EC4C28E11C40CEB200C94955 /* TopicPageViewController.h */,
+				EC4C28E21C40CEB200C94955 /* TopicPageViewController.m */,
+				EC4C28E51C40D1C100C94955 /* TopicViewController.h */,
+				EC4C28E61C40D1C100C94955 /* TopicViewController.m */,
+				EC4C28E71C40D1C100C94955 /* TopicViewController.xib */,
+			);
+			name = "Topic Screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +321,7 @@
 			files = (
 				8FE12E341C3F63620003942F /* LaunchScreen.storyboard in Resources */,
 				8F5EDA3C1C40469B00603452 /* CollectionViewArticleCell.xib in Resources */,
+				EC4C28E91C40D1C100C94955 /* TopicViewController.xib in Resources */,
 				8F5EDA411C406A8E00603452 /* NewsArticleViewController.xib in Resources */,
 				8FE12E311C3F63620003942F /* Assets.xcassets in Resources */,
 				8FE12E2C1C3F63620003942F /* Main.storyboard in Resources */,
@@ -303,12 +351,16 @@
 			files = (
 				8FE12E5E1C3F6A040003942F /* NewsCategoryPageContentViewController.m in Sources */,
 				8FE12E611C3F6C980003942F /* RootViewController.m in Sources */,
+				EC4C28E81C40D1C100C94955 /* TopicViewController.m in Sources */,
 				8F5EDA3B1C40469B00603452 /* CollectionViewArticleCell.m in Sources */,
 				8FE12E261C3F63620003942F /* AppDelegate.m in Sources */,
 				8FE12E231C3F63620003942F /* main.m in Sources */,
 				8FE12E5A1C3F67530003942F /* ArticleScrollerCollectionView.m in Sources */,
 				8F5EDA401C406A8E00603452 /* NewsArticleViewController.m in Sources */,
+				EC4C28E31C40CEB200C94955 /* TopicPageViewController.m in Sources */,
 				8FE12E2F1C3F63620003942F /* NewsReader.xcdatamodeld in Sources */,
+				521258C7A19766D9DB64FDB4 /* Article.m in Sources */,
+				521258D02289CEB6D6BFF0E5 /* Topic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

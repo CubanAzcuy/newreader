@@ -115,46 +115,8 @@ willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewContro
     pageContentViewController.txtTitle = self.newsCategoryTitles[index];
     pageContentViewController.image = self.newsCategoryImages[index];
     pageContentViewController.pageIndex = index;
-    //self.navigationItem.title = self.arrPageImages[index];
     return pageContentViewController;
 }
 
-/*- (NSUInteger) setCurrentIndex:(NSUInteger)index{
-    NSUInteger number = 0;
-    
-    return number;
-}*/
-
-#pragma mark - No of Pages Methods
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
-{
-    return [self.newsCategoryTitles count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
-{
-    return 0;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return [self.newsCategoryTitles count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-    UINib *nib = [UINib nibWithNibName:@"CollectionViewArticleCell" bundle: nil];
-    [cv registerNib:nib forCellWithReuseIdentifier:@"ArticleCell"];
-    
-    CollectionViewArticleCell *articleCell = (CollectionViewArticleCell*)[cv dequeueReusableCellWithReuseIdentifier:@"ArticleCell" forIndexPath:indexPath];
-
-    articleCell.articleTitle.text = self.articleTitles[self.topicInteger];
-    
-    return articleCell;
-}
 
 @end
